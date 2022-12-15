@@ -162,4 +162,4 @@ cython_debug/
 
 djangoProject/settings.py
 db.sqlite3
-static/
+djangoProject/static
