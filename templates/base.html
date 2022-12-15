@@ -13,114 +13,92 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <title>Fitness Portal</title>
+
+    {% block headContent %}
+
+    {% endblock %}
+
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm bg-light border-bottom">
-  <div class="container-fluid">
-    <a
-        href="{% url 'core:core_index' %}"
-        class="navbar-brand mb-0">
-        <img
-        class="d-inline-block align-top"
-        src="{% static 'core/img/dhf_logo.png' %}"
-        height="112"
-        width="112"
-        alt="img not found"/>
-    </a>
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-sm bg-light border-bottom">
+      <div class="container-fluid">
+        <a
+            href="{% url 'core:core_index' %}"
+            class="navbar-brand mb-0">
+            <img
+            class="d-inline-block align-top"
+            src="{% static 'core/img/dhf_logo.png' %}"
+            height="112"
+            width="112"
+            alt="img not found"/>
+        </a>
 
-   <button
-        type="button"
-        class="navbar-toggler "
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle Navigation">
+       <button
+            type="button"
+            class="navbar-toggler "
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle Navigation">
 
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav">
 
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="{% url 'core:core_index' %}" class="nav-link">
-                    Home
-                </a>
-            </li>
-           <li class="nav-item">
-                <a href="{% url 'tracker:tracker_index' %}" class="nav-link">
-                    Tracker
-                </a>
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#"
-                   class="nav-link dropdown-toggle"
-                   id="navBarDropdown"
-                   role="button"
-                   data-bs-toggle="dropdown"
-                   aria-expanded="false">Training</a>
-                <ul class="dropdown-menu" aria-labelledby="nsvBarDropdown">
-                    <li><a href="#" class="dropdown-item">All about training</a> </li>
-                    <li><a href="#" class="dropdown-item">Train at Derek&apos;s Gym</a> </li>
-                    <li><a href="#" class="dropdown-item">Online Training</a> </li>
-                    <li><a href="#" class="dropdown-item">Train at Home</a> </li>
-                     <li><a href="#" class="dropdown-item">Train remotely with Zoom</a> </li>
-               </ul>
-            </li>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="{% url 'core:core_index' %}" class="nav-link">
+                        Home
+                    </a>
+                </li>
+               <li class="nav-item">
+                    <a href="{% url 'tracker:tracker_index' %}" class="nav-link">
+                        Tracker
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#"
+                       class="nav-link dropdown-toggle"
+                       id="navBarDropdown"
+                       role="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">Training</a>
+                    <ul class="dropdown-menu" aria-labelledby="nsvBarDropdown">
+                        <li><a href="#" class="dropdown-item">All about training</a> </li>
+                        <li><a href="#" class="dropdown-item">Train at Derek&apos;s Gym</a> </li>
+                        <li><a href="#" class="dropdown-item">Online Training</a> </li>
+                        <li><a href="#" class="dropdown-item">Train at Home</a> </li>
+                         <li><a href="#" class="dropdown-item">Train remotely with Zoom</a> </li>
+                   </ul>
+                </li>
 
-           <li class="nav-item">
-                <a href="{% url 'blog:blog_index' %}" class="nav-link">
-                    Blog
-                </a>
-            </li>
+               <li class="nav-item">
+                    <a href="{% url 'blog:blog_index' %}" class="nav-link">
+                        Blog
+                    </a>
+                </li>
 
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    Member Area
-                </a>
-            </li>
-       </ul>
-   </div>
+                <li class="nav-item">
+                    <a href="{% url 'tracker:tracker_dashboard' %}" class="nav-link">
+                        Member Area
+                    </a>
+                </li>
+           </ul>
+       </div>
 
-  </div>
-</nav>
+      </div>
+    </nav>
 
 
-{% comment %}
-<nav class="navbar navbar-expand-lg navbar-dark blur blur-rounded top-0 border-bottom z-index-3 shadow w-100 mt-4 d-lg-block my-3 py-2" style="background-color: #2F91F2;">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'core:core_index' %}">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'tracker:tracker_index' %}">Tracker</a>
-{#          <a class="nav-link" href="http://127.0.0.1:8000/templates/tracker/index.html">Tracker</a>#}
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'projects:all_projects' %}">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'blog:blog_index' %}">Blog</a>
-        </li>
-       </ul>
-    </div>
-  </div>
-</nav>
-{% endcomment %}
+{% block content %}
 
-<div class="container">
-    {% block content %}
+{% endblock %}
 
-    {% endblock %}
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
