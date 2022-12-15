@@ -4,23 +4,30 @@
 
 {% block content %}
 
-<div class="container">
-    <h4><span style="color: #2F91F2">Welcome to Your Fitness Dashboard</span></h4>
-{#    <div class="row">#}
-{##}
-{#        {% for project in projects %}#}
-{#                <div class="col-md-4">#}
-{#                    <div class="card mb-2">#}
-{#                        <img class="card-img-top" src="{% static project.image %}" alt="{{ project.description }}">#}
-{#                        <div class="card-body">#}
-{#                            <h5 class="card-title">{{ project.title }}</h5>#}
-{#                            <p class="card-text">{{ project.description }}</p>#}
-{#                            <a href="{% url 'projects:project_detail' project.pk %}" class="btn btn-primary">Read More</a>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                </div>#}
-{#        {% endfor %}#}
-{#    </div>#}
+<div class="container mt-3">
+    <h4>Welcome to Derek Haff Fitness</h4>
+
+<p>You&apos;ve come to the right place for your fitness needs!</p>
+
+<h5>We believe in the 4 pillars of fitness</h5>
+<ul>
+    <li>Exercise</li>
+    <li>Diet</li>
+    <li>Sleep</li>
+    <li>Stress Management</li>
+</ul>
+
+<p>In order to help you maximize your success in all 4 of these important areas, We offer the following services:</p>
+<ul>
+    <li>Personal Training at our facility in Davis</li>
+    <li>Personal Training in your home</li>
+    <li>Personal Training remotely via Zoom</li>
+    <li>A blog to keep you informed about the latest fitness info available</li>
+    <li>A tracker on our site to help you crush your diet and exercise goals</li>
+    <li>Customized online training programs</li>
+    <li>Diet and Nutrition coaching</li>
+</ul>
+
 </div>
 
 {% endblock %}
