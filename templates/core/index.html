@@ -2,31 +2,94 @@
 
 {% load static %}
 
+{% block headContent %}
+
+<style>
+.masthead {
+    background-image: url('{% static 'core/img/dhf-background.jpg' %}');
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,.2);
+}
+
+
+h1 {
+    font-size: 4rem;
+}
+
+.color-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .masthead {
+        background-image: url('{% static 'core/img/dhf-background-small.jpg' %}');
+        min-height: 60vh;
+    }
+
+    h1 {
+        font-size: calc(1.525rem + 3.3vw);
+    }
+}
+
+</style>
+
+{% endblock %}
+
+
+
+
 {% block content %}
 
-<div class="container mt-3">
-    <h4>Welcome to Derek Haff Fitness</h4>
+<div class="masthead container-fluid">
 
-<p>You&apos;ve come to the right place for your fitness needs!</p>
 
-<h5>We believe in the 4 pillars of fitness</h5>
-<ul>
-    <li>Exercise</li>
-    <li>Diet</li>
-    <li>Sleep</li>
-    <li>Stress Management</li>
-</ul>
+    <div class="color-overlay d-flex justify-content-center align-items-center">
 
-<p>In order to help you maximize your success in all 4 of these important areas, We offer the following services:</p>
-<ul>
-    <li>Personal Training at our facility in Davis</li>
-    <li>Personal Training in your home</li>
-    <li>Personal Training remotely via Zoom</li>
-    <li>A blog to keep you informed about the latest fitness info available</li>
-    <li>A tracker on our site to help you crush your diet and exercise goals</li>
-    <li>Customized online training programs</li>
-    <li>Diet and Nutrition coaching</li>
-</ul>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Derek Haff Fitness</h1>
+                </div>
+            </div>
+
+             <div class="row">
+                <div class="col">
+                    <h4>Your Total Fitness Solution</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% comment %}
+    <p>You&apos;ve come to the right place for your fitness needs!</p>
+
+    <h5>We believe in the 4 pillars of fitness</h5>
+    <ul>
+        <li>Exercise</li>
+        <li>Diet</li>
+        <li>Sleep</li>
+        <li>Stress Management</li>
+    </ul>
+
+    <p>In order to help you maximize your success in all 4 of these important areas, We offer the following services:</p>
+    <ul>
+        <li>Personal Training at our facility in Davis</li>
+        <li>Personal Training in your home</li>
+        <li>Personal Training remotely via Zoom</li>
+        <li>A blog to keep you informed about the latest fitness info available</li>
+        <li>A tracker on our site to help you crush your diet and exercise goals</li>
+        <li>Customized online training programs</li>
+        <li>Diet and Nutrition coaching</li>
+    </ul>
+    {% endcomment %}
+
 
 </div>
 
