@@ -28,7 +28,7 @@ h1 {
 
 @media (max-width: 768px) {
     .masthead {
-        background-image: url('{% static 'core/img/dhf-background-small.jpg' %}');
+        background-image: url('{% static 'core/img/dhf-background-med.jpg' %}');
         min-height: 60vh;
     }
 
@@ -36,6 +36,18 @@ h1 {
         font-size: calc(1.525rem + 3.3vw);
     }
 }
+
+@media (max-width: 480px) {
+    .masthead {
+        background-image: url('{% static 'core/img/dhf-background-small.jpg' %}');
+        min-height: 50vh;
+    }
+
+    h1 {
+        font-size: calc(1.125rem + 3.3vw);
+    }
+}
+
 
 </style>
 

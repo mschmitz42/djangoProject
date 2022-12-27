@@ -1,0 +1,40 @@
+<!--users/templates/registration/login.html-->
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% comment %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-outline-secondary" type="submit" >Log In</button>
+</form>
+{% endcomment %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-8">
+
+        {% if form.errors %}
+            <div class="alert alert-danger mt-3" role="alert">
+              Username or Password incorrect!
+            </div>
+        {% endif %}
+
+           <form role="form" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="input-group">
+                        <input class="form-control mt-3" id="{{ field.id_for_label }}" maxlength="30" name="{{ field.html_name }}" placeholder="{{ field.label }}" type="{{ field.widget_type }}" />
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+                <input type="submit" class="btn btn-secondary mt-3" value="login" />
+{#                <input type="hidden" name="next" value="{{ next }}" />#}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -42,31 +42,31 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'core:core_index' %}">Home</a>
                 </li>
-                {% if not user.is_authenticated %}
+                {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'tracker:tracker_dashboard' %}">Tracker</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Scheduler</a>
+                        <a class="nav-link" href="{% url 'core:core_scheduler' %}">Scheduler</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Profile</a>
+                      <a class="nav-link" href="{% url 'core:core_profile' %}">Profile</a>
                     </li>
                 {%  endif %}
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About DHF</a>
+                  <a class="nav-link" href="{% url 'core:core_about' %}">About DHF</a>
                 </li>
              </ul>
               <div class="d-flex">
-                {% if not user.is_authenticated %}
-                    <a href="#" class="nav-link me-3">
-                        <button type="button" class="btn btn-sm btn-outline-light">Log In</button>
-                    </a>
-                {% else %}
-                     <a href="#" class="nav-link me-3">
+                {% if user.is_authenticated %}
+                     <a href="{% url 'logout' %}" class="nav-link me-3">
                         <button type="button" class="btn btn-sm btn-outline-light">Log Out</button>
                     </a>
-                {%  endif %}
+                {% else %}
+                     <a href="{% url 'login' %}" class="nav-link me-3">
+                        <button type="button" class="btn btn-sm btn-outline-light">Log In</button>
+                    </a>
+               {%  endif %}
               </div>
             </div>
           </div>
